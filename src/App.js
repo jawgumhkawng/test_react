@@ -7,6 +7,30 @@ class Item extends React.Component {
     </li> )
   }
 }
+
+class AddForm extends React.Component {
+
+  nameRef = React.createRef();
+  priceRef = React.createRef();
+
+  add = () => {
+    let name = this.nameRef.current.value;
+    let price = this.priceRef.current.value;
+
+    this.props.add(name, price)
+  }
+
+  render() {
+    return(
+      <div>
+        <input type="text" ref={this.nameRef} />
+        <input type="number" ref={this.priceRef} />
+        <button onClick={this.add}>Add</button>
+      </div>
+    )
+  }
+}
+
 class App extends React.Component {
 
   state = {
@@ -15,13 +39,11 @@ class App extends React.Component {
       {id:2, name:'Orange', price:1.3},
     ]
   }
-nameRef = React.createRef();
-priceRef = React.createRef();
 
-  add = () => {
+
+  add = (name,price) => {
     let id = this.state.items.length + 1;
-    let name = this.nameRef.current.value;
-    let price = this.priceRef.current.value;
+    
 
     this.setState({
       items: [
@@ -34,9 +56,7 @@ priceRef = React.createRef();
     return (
       <div>
         <h3>List Of My Foods</h3>
-        <input type="text" ref={this.nameRef} />
-        <input type="number" ref={this.priceRef} />
-        <button onClick={this.add}>Add</button>
+      <AddForm add={this.add}/>
         <ul>
           {this.state.items.map( i => {
             return (
