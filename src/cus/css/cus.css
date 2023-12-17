@@ -1,0 +1,31 @@
+.background {
+  background-color: blue;
+  color: #fff;
+  padding: 6px;
+}
+.background span {
+  color: #ffea00;
+}
+
+.text {
+  font-weight: bolder;
+  color: #00c3ff;
+  padding: 10px;
+  border: 1px solid #ffea00;
+}
+
+.btn {
+  background-color: beige;
+  padding: 10px;
+  margin: 5px;
+  border: 0px;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+.btn:hover {
+  background-color: #ffea00;
+  color: #fff;
+  margin: 10px;
+}
+
+/*# sourceMappingURL=cus.css.map */

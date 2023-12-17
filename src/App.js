@@ -1,4 +1,7 @@
 import React from "react";
+import MyNav from "./MyNav";
+import MyHeader from "./MyHeader";
+import "./cus/css/cus.css";
 
 class Item extends React.Component {
   render(){
@@ -31,6 +34,8 @@ class AddForm extends React.Component {
   }
 }
 
+
+
 class App extends React.Component {
 
   state = {
@@ -55,7 +60,17 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <h3>List Of My Foods</h3>
+        <MyNav>
+          <h2>NavBar Dark</h2>
+        </MyNav>
+        <MyHeader>
+         <h3>Hello React</h3>
+        </MyHeader>
+        <h5 className="background">
+          jaw gum hkawng <span>web developer</span>
+        </h5>
+        <p className="text">i'm jaw gumhkawng nagwjkhitfuoiygtoiuygpiudsa</p>
+        <button className="btn">Click Me</button>
       <AddForm add={this.add}/>
         <ul>
           {this.state.items.map( i => {
